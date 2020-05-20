@@ -8,9 +8,9 @@ REPOSITORIES=(
 for REPOSITORY in ${REPOSITORIES[*]}
 do
 	echo ===========================================
-	echo Building local docker image: $REPOSITORY
+	echo Provisioning local docker container for: $REPOSITORY
 	echo ===========================================
 	cd $REPOSITORY
-	docker build -t ${REPOSITORY,,} .
+	docker-compose up -d
 	cd $STARTINGPATH
 done
